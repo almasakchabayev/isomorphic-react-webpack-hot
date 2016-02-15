@@ -1,12 +1,12 @@
 {
   "name": "poblatu",
-  "description": "Server and Web client for poblatu.kz",
+  "description": "Isomorphic react webpack hot example",
   "version": "0.1.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/FourSS/poblatu.git"
+    "url": "https://github.com/almasakchabayev/isomorphic-react-webpack-hot.git"
   },
-  "homepage": "https://github.com/FourSS/poblatu.git",
+  "homepage": "https://github.com/almasakchabayev/isomorphic-react-webpack-hot.git",
   "main": "dist/server.js",
   "scripts": {
     "start": "node node_modules/forever/bin/forever --minUptime 1000 --spinSleepTime 1000 -c \"node --harmony\" ./dist/server.js",
@@ -21,10 +21,15 @@
   },
   "dependencies": {
     "babel-polyfill": "6.5.0",
+    "body-parser": "^1.15.0",
+    "compression": "^1.6.1",
     "express": "^4.13.4",
+    "morgan": "^1.6.1",
     "react": "0.14.7",
     "react-dom": "0.14.7",
-    "react-router": "2.0.0"
+    "react-router": "2.0.0",
+    "serve-favicon": "^2.3.0",
+    "winston": "^2.1.1"
   },
   "devDependencies": {
     "babel": "6.5.2",

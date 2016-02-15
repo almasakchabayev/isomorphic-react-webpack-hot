@@ -4,10 +4,10 @@ const path = require('path');
 module.exports = {
   target: 'web',
   cache: false,
-  context: __dirname,
+  context: path.resolve(__dirname, '..'),
   debug: false,
   devtool: false,
-  entry: ['../src/client'],
+  entry: ['./src/client'],
   output: {
     path: path.join(__dirname, '../static/dist'),
     filename: 'client.js',
@@ -22,7 +22,7 @@ module.exports = {
   ],
   module: {
     preLoaders: [
-      { test: /\.js?$/, loaders: ['eslint'], include: path.join(__dirname, '../src') }
+      { test: /\.js?$/, loaders: ['eslint'], exclude: /node_modules/ }
     ],
     loaders: [
       { test: /\.json$/, loaders: ['json'] }

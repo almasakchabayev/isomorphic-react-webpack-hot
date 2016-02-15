@@ -13,10 +13,10 @@ fs.readdirSync('node_modules').
 module.exports = {
   target: 'node',
   cache: false,
-  context: __dirname,
+  context: path.resolve(__dirname, '..'),
   debug: false,
   devtool: 'source-map',
-  entry: ['../src/server'],
+  entry: ['./src/server'],
   output: {
     path: path.join(__dirname, '../dist'),
     filename: 'server.js'
@@ -27,7 +27,7 @@ module.exports = {
   ],
   module: {
     preLoaders: [
-      { test: /\.js?$/, loaders: ['eslint'], include: path.join(__dirname, '../src') }
+      { test: /\.js?$/, loaders: ['eslint'], exclude: /node_modules/ }
     ],
     loaders: [
       { test: /\.json$/, loaders: ['json'] }
